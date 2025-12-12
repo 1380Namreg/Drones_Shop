@@ -5,6 +5,8 @@
         <title>{% block title %}{% endblock %}</title>
         {% block links %}{% endblock %}
         <link rel="stylesheet" href="{{url_for('static', filename = 'css/base.css')}}">
+        <link rel="stylesheet" href="{{url_for('static',filename = 'css/footer.css')}}">
+        <link rel="stylesheet" href="{{url_for('static',filename = 'css/header.css')}}">
         
     </head>
     <body>
@@ -26,8 +28,48 @@
                 <h1>Які змінюють реальність</h1>
             </div>
             <img src="{{ url_for('static', filename = 'images/Drone.svg' ) }}" alt="" id="drone">
-            
+            <div id = "to-catalog">
+                <p>Передові технології в одному місці. <br> Обирай найкраще для найважливішого.</p>
+                <button>До каталогу</button>
+                <!-- p - тег для тексту -->
+                 <!-- div - контейнер для елементів -->
+                  <!-- br - тег, переносить текст на новий рядок -->
+            </div>
+            <div class="ellipse" id="elipse-header"></div>
         </header>
-        {% block content %}{% endblock %}
+        <main>{% block content %}{% endblock %}</main>
+        
+        <footer>
+            <div id="elips-footer" class="ellipse"></div>
+            <div id="rating">
+                <div class="rating-block">
+                    <h3>1к+</h3>
+                    <p>Успішних відправок</p>
+                </div>
+                <div class="rating-block">
+                    <h3>1.5к+</h3>
+                    <p>Задоволених клієнтів</p>
+                </div>
+                <div class="rating-block">
+                    <h3>24/7</h3>
+                    <p>Підтримка клієнтів</p>
+                </div>
+            </div>
+            <img src="{{ url_for('static', filename = 'images/Big-logo.svg' ) }}" alt="" id="Big-logo">
+            <div id="nav-footer">
+                <nav>
+                    <a href="/catalog">Каталог</a>
+                    <a href="#">Про нас</a>
+                    <a href="#">Контакти</a>
+                    <a href="#">Кошик</a>
+                    <a href="#">Кабінет</a>
+                </nav>
+                <div id="license">
+                    <hr>
+                    <p>© 2025 Drones Всі права захищені.</p>
+                </div>
+            </div>
+            
+        </footer>
     </body>
 </html> 

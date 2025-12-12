@@ -5,64 +5,29 @@
     box-sizing: border-box;
 }
 
-header {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-
-    gap: 16.5vh;
-    padding-top: 2.3vh;
-    height: 100vh;
-
-    background-color: #CDD5DD;
+body{
+    overflow-x: hidden ;
 }
 
-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 0 2.7vw;
-    border: 1px #E4E4E7 solid;
-    border-radius: 7.5vh;
-    
-    width: 94.4vw;
-    height: 7.5vh;
+
+main{
+    min-height: 100vh;
 }
 
-nav div{
-    display: flex;
-    flex-direction: row;
-    width: 30%;
-
-    gap: 3vh;
-}
-
-#profile {
-    justify-content: end;
-}
-
-#title{
-    display: flex;
-    flex-direction: column;
-    gap: 2.8vh;
-
-}
-#title h1{
-    color: #FFFFFF;
-    font-size: 7.5vh;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: bolder;
-    text-align: center;
-    text-transform: uppercase;
-}
-
-#drone{
-    height: 95.2vh;
+.ellipse {
+    background-color: #FFFFFF;
+    border-radius: 100%;
+    aspect-ratio: 1773 / 835;
+    width: 123vw;
     position: absolute;
-    bottom: -17vh;
-    rotate: 11.29deg;
+    z-index: 0;
 }
+
+
+/* 
+aspect-ratio: ширина / висота -  відношення сторін, вказавши один розмір другий буде задано автоматично
+
+overflow-x або y - вказує що буде якщо вміст елемента вийде за рамки ( scroll або hiden )
+
+z-index - вказує який елемент буде знаходитись попереду, а який на фоні
+*/

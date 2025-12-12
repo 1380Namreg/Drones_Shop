@@ -1,0 +1,53 @@
+footer{
+    width: 100vw;
+    height: 100vh;
+    padding-top: 7vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    background-color: #CDD5DD;
+    gap: 3.4vh;
+    position: relative;
+}
+
+#rating{
+    display: flex;
+    flex-direction: row;    
+    gap: 12.5vw;
+    z-index: 1;
+}
+
+.rating-block{
+    display: flex;
+    flex-direction: column;  
+    justify-content: start;
+    align-items: center;
+    gap: 3.3vh;
+}
+
+
+/* 
+
+position: relative; - допомагає переміщувати елементи не впливаючи на інші ( переміщує від своїх координати, а не екрану )
+Якщо в середині елемента з relative є елемент з absolute він буде переміщуватись відносно нього
+
+*/
+.rating-block h3 {
+    font-size: 5.17vh;
+    color: #0C122A;
+}
+
+.rating-block p {
+    font-size: 1.9vh;
+    color: #0C122A;
+}
+
+#elips-footer {
+    bottom: 65.3vh;
+
+}
+
+#Big-logo{
+    width: 63.5vw;
+}

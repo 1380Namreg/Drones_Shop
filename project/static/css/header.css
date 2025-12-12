@@ -1,0 +1,94 @@
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+
+    gap: 16.5vh;
+    padding-top: 2.3vh;
+    height: 100vh;
+
+    background-color: #CDD5DD;
+}
+
+header nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 0 2.7vw;
+    border: 1px #E4E4E7 solid;
+    border-radius: 7.5vh;
+    
+    width: 94.4vw;
+    height: 7.5vh;
+}
+
+nav div{
+    display: flex;
+    flex-direction: row;
+    width: 30%;
+
+    gap: 3vh;
+}
+
+#profile {
+    justify-content: end;
+}
+
+#title{
+    display: flex;
+    flex-direction: column;
+    gap: 2.8vh;
+
+}
+#title h1{
+    color: #FFFFFF;
+    font-size: 7.5vh;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bolder;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#drone{
+    height: 95.2vh;
+    position: absolute;
+    bottom: -17vh;
+    rotate: 11.29deg;
+    z-index: 1;
+}
+
+#to-catalog{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+
+    position: absolute;
+    bottom: 2.5vh;
+    right: 5.8vw;
+
+    height: 13.9vh;
+    width: 20.8vw;
+    z-index: 2;
+}
+
+#to-catalog p{
+    font-size: 2.2vh;
+    color: #0C122A;
+}
+
+#to-catalog button{
+    background-color: #0C122A;
+    padding: 2.4vh 2.7vw;
+    color: #E4E4E7;
+    border-radius: 7vw;
+    text-transform: uppercase;
+}
+
+#elipse-header{
+    top: 64vh;
+}
