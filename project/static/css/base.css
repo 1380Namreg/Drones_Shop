@@ -1,8 +1,39 @@
+@font-face {
+    font-family: "GT Walsheim Pro";
+    src: url("../font/bold.woff2") format("woff2"), 
+         url("../font/bold.woff") format("woff");
+    font-weight: 900;
+}
+@font-face {
+    font-family: "GT Walsheim Pro";
+    src: url("../font/regular.woff2") format("woff2"), 
+         url("../font/regular.woff") format("woff");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "GT Walsheim Pro";
+    src: url("../font/meduim.woff2") format("woff2"), 
+         url("../font/meduim.woff") format("woff");
+    font-weight: 500;
+}
+
+/* 
+
+Щоб підключити власний шрифт:
+@font-face{
+    font-family: "назва";
+    src: url("шлях") format("woff2"), 
+         url("шлях") format("woff");
+}
+
+*/
+
 *{
     margin: 0;
     padding: 0;
     text-decoration: none;
     box-sizing: border-box;
+    font-family: "GT Walsheim Pro";
 }
 
 body{
@@ -37,6 +68,38 @@ main{
 
 img{
     user-select: none;
+}
+
+.title{
+    color: #CDD5DD;
+    font-size: 5.17vh;
+    font-weight: bolder;
+}
+
+.outline, .fill{
+    font-size: 1.6vh;
+    border-radius: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1.25vh 2.8vw;
+    gap: 1.1vw;
+    text-transform: uppercase;
+    cursor: pointer;
+    /* 
+    cursor - змінює курсор при наведенні ( pointer - натискання )
+    */
+}
+
+.outline{
+    background-color: white;
+    color: #0C122A;
+    border: 1.5px solid #0C122A;
+}
+
+.fill {
+    background-color: #0C122A;
+    color: white;
 }
 
 

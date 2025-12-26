@@ -6,6 +6,7 @@ DRONES
 
 {%block links %}
 <link rel="stylesheet" href="{{url_for('home.static', filename = 'css/home.css')}}">
+<link rel="stylesheet" href="{{url_for('home.static', filename = 'css/product.css')}}">
 {%endblock%}
 
 {%block header%}
@@ -39,7 +40,9 @@ DRONES
         {% for product in new_products %}
             <div class="new-card">
                 <img src="{{ url_for('home.static', filename = 'images/'+ product.img + '.png' ) }}" alt="" id="mainImg">
-                <img src="{{ url_for('home.static', filename = 'images/'+ product.bg +'.jpg' ) }}" alt="" id="bg">
+                <div class="bg-container"> 
+                    <img src="{{ url_for('home.static', filename = 'images/'+ product.bg +'.jpg' ) }}" alt="" id="bg">
+                </div>
                 <div class="gradient" id="grad{{product.id}}"></div>
                 <div class="card-content">
                     <div class="card-title">
@@ -63,10 +66,10 @@ DRONES
             {%for product in products %}
                 <div class="product">
                     <img src="{{ url_for('shop_app.static', filename = product.get_path() ) }}" alt="">
-                </div>
-                <div class="text">
-                    <h5>{{product.name}}</h5>
-                    <p>{{product.price}}</p>
+                    <div class="text">
+                        <h5>{{product.name}}</h5>
+                        <p>{{product.price}} ₴</p>
+                    </div>
                 </div>
             {% endfor %}
         </div>

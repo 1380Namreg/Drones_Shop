@@ -6,10 +6,14 @@ header {
 
     gap: 16.5vh;
     padding-top: 2.3vh;
+}
+header:has(#title){
     height: 100vh;
-
     background-color: #CDD5DD;
 }
+/* 
+cелектор:has(селектор2) - задає стилі 1 елементу, тільки коли він містить другий
+*/
 
 header nav {
     display: flex;
@@ -24,6 +28,8 @@ header nav {
     
     width: 94.4vw;
     height: 7.5vh;
+    z-index: 3;
+    position: fixed;
 }
 
 nav div{
@@ -42,12 +48,12 @@ nav div{
     display: flex;
     flex-direction: column;
     gap: 2.8vh;
+    margin-top: 24vh;
 
 }
 #title h1{
     color: #FFFFFF;
     font-size: 7.5vh;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bolder;
     text-align: center;
     text-transform: uppercase;

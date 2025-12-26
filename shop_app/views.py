@@ -21,7 +21,7 @@ def check_admin() -> bool:
         return True
     return False
 
-PRODUCT_IN_PAGE = 4
+PRODUCT_IN_PAGE = 16
 
 def render_catalog():
     page_num = int(flask.request.args.get('page', 1))

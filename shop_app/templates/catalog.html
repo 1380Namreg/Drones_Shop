@@ -16,50 +16,80 @@ Catalog
             <button type="submit">Відправити</button>
         </form>
     {% endif %}
-
-    {% for product in products %}
-        <h1>{{product.name}} - {{product.price}}$</h1>
-        <p>{{product.description}}</p>
-        <img src="{{ url_for('shop_app.static', filename = product.get_path() ) }}" alt="" style= "width: 100px">
-        {% if admin %}
-            <a href="/delete/{{ product.id }}">
-                <button>Видалити</button>
-            </a>
-            <a href="/change/{{product.id}}">
-                <button>Змінити</button>
-            </a>
-        {% endif %}
-        <a href="/buy/{{product.id}}"><button>Купити</button></a>
-    {% endfor%}
+    <h2 class="title">Каталог</h2>
+    <div id = 'catalog-container'>
+        <div id = "filters">
+            <div>Всі</div>
+            <div>
+                <img src="{{ url_for('shop_app.static', filename = 'images/filter1.png' ) }}" alt="">
+            </div>
+            <div>
+                <img src="{{ url_for('shop_app.static', filename = 'images/filter2.png' ) }}" alt="">
+            </div>
+        </div>
+        <div id="products">
+            {% for product in products %}
+                <div class="product">
+                    <img src="{{ url_for('shop_app.static', filename = product.get_path() ) }}" alt="">
+                    <div class="text">
+                        <h5>{{product.name}}</h5>
+                        <p>{{product.price}} ₴</p>
+                    </div>
+                    <a href="/buy/{{product.id}}"><button>Купити</button></a>
+                </div>
+                {% if admin %}
+                    <a href="/delete/{{ product.id }}">
+                        <button>Видалити</button>
+                    </a>
+                    <a href="/change/{{product.id}}">
+                        <button>Змінити</button>
+                    </a>
+                {% endif %}
+            {% endfor%}
+        </div>
     
-    <div>
-        {% if page > 1%}
-            <a href="/catalog?page={{page-1}}">
-                <button><-</button>    
-            </a>
-        {% endif %}
-        
-        {% for pag_btn in pagination%}
-            {% if pag_btn == "..."%}
-                <button>...</button>   
-            {% else %}
-                <a href="/catalog?page={{pag_btn}}">
-                    {% if pag_btn == page %}
-                        <button style="background-color: rgba(255, 196, 0, 0.5);">{{pag_btn}}</button> 
-                    {% else %}
-                        <button>{{pag_btn}}</button> 
-                    {% endif %}
+        <div id = "paginations">
+            {% if page > 1%}
+                <a class="pagination" href="/catalog?page={{page-1}}">
+                    <img src="{{ url_for('shop_app.static', filename = 'images/arrowR.png' ) }}" alt="" style="rotate: 180deg">
                 </a>
-            {%endif%}
-        {% endfor %}
-        
-        {% if page < count_page %}
-            <a href="/catalog?page={{page+1}}">
-                <button>-></button>    
-            </a>
-        {% endif %}
+            {% else %}
+                <!-- 
+                    Якщо потрібно задати декілька класів/id - "назва1 назва2"
+                -->
+                <div class = "pagination disabled">
+                    <img src="{{ url_for('shop_app.static', filename = 'images/arrowR.png' ) }}" alt="" style="rotate: 180deg">
+                </div>
+            {% endif %}
+            
+            {% for pag_btn in pagination%}
+                {% if pag_btn == "..."%}
+                    <div class="pagination">...</div>   
+                {% else %}
+                    <a href="/catalog?page={{pag_btn}}">
+                        {% if pag_btn == page %}
+                            <div class="pagination" style="background-color: #F4F4F4;">{{pag_btn}}</div> 
+                        {% else %}
+                            <div class="pagination">{{pag_btn}}</div> 
+                        {% endif %}
+                    </a>
+                {%endif%}
+            {% endfor %}
+            
+            {% if page < count_page %}
+                <a class="pagination" href="/catalog?page={{page+1}}">
+                     <img src="{{ url_for('shop_app.static', filename = 'images/arrowR.png' ) }}" alt="">
+                </a>
+            {%else%}
+                <div class = "pagination disabled">
+                    <img src="{{ url_for('shop_app.static', filename = 'images/arrowR.png' ) }}" alt="">
+                </div>
+            {% endif %}
+        </div>
     </div>
 {%endblock%}
 
 {%block links %}
+<link rel="stylesheet" href="{{url_for('home.static', filename = 'css/product.css')}}">
+<link rel="stylesheet" href="{{url_for('shop_app.static', filename = 'css/catalog.css')}}">
 {%endblock%}

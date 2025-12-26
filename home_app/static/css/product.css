@@ -1,0 +1,52 @@
+.product{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3vh;
+    width: 22.3vw;
+    cursor: pointer;
+    border-radius: 10px;
+    position: relative;
+}
+
+.product:hover{
+    background-color: #F4F4F4;
+}
+
+.product button{
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 2vh;
+}
+
+.product:hover button{
+    display: flex;
+}
+
+.product img {
+    width: 81%;
+}
+
+.product .text{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.8vh;
+    color: #0C122A;
+    width: 81%;
+}
+
+.product .text h5{
+    height: 6.3vh;
+    font-size: 2.8vh;
+}
+
+.product .text p{
+    font-size: 1.6vh;
+}
+
+/* 
+селектор:hover{} - задає стилі при наведенні на елемент
+*/

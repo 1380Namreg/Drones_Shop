@@ -1,0 +1,69 @@
+#catalog-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 2.8vh;
+    width: 94.5vw;
+}
+
+#filters{
+    display: flex;
+    flex-direction: row;
+    gap: 1.3vw;
+}
+
+#filters div {
+    border-radius: 50%;
+    border: 1px #E7E7EA solid;
+    height: 7vh;
+    width: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.3vh;
+}
+
+#filters div img{
+    width: 80%;
+}
+
+#products{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.8vh;
+}
+
+#paginations{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 0.4vw;
+    width: 100%;
+    margin-top: 2vh;
+}
+
+.pagination{
+    width: 4.7vh;
+    height: 4.7vh;
+    border-radius: 100%;
+    color: #0C122A;
+    font-size: 1.8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination img{
+    width: 100%;
+
+}
+
+/* 
+opacity - прозорість елементу ( від 0 до 1 ) 
+*/
+
+.disabled{
+    opacity: 0.5;
+}
